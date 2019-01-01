@@ -1,8 +1,348 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style> 
+#main {
+  width: 100%;
+  height: 600px;
+  border: 1px solid black;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+#main div:nth-child(1){
+ -webkit-flex: 2;  /* Safari 6.1+ */
+  -ms-flex: 2;  /* IE 10 */  
+  flex: 2;
+  color:red;
+}
+#main div:nth-child(2){
+ -webkit-flex: 2;  /* Safari 6.1+ */
+  -ms-flex: 2;  /* IE 10 */  
+  flex: 2;
+}
+#main div:nth-child(3){
+ -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */  
+  flex: 1;
+}
+#main div:nth-child(4){
+ -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */  
+  flex: 1;
+}
+
+#main div:nth-child(5){
+ -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */  
+  flex: 1;
+}
+
+#flex-container-column{
+    display: flex;
+    flex-direction: column;
+}
+#flex-container-column > div{
+    background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+#flex-container-row{
+    display: flex;
+    flex-direction: row;
+}
+#flex-container-row > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+#flex-container-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
+#flex-container-reverse > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+#flex-container-nowrap{
+    display: flex;
+    flex-wrap: nowrap;
+}
+#flex-container-nowrap > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+#flex-container-wrap{
+    display: flex;
+  flex-wrap: wrap;
+}
+
+#flex-container-wrap > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+#flex-container-wrap-reverse{
+    display: flex;
+  flex-wrap: wrap-reverse;
+}
+#flex-container-wrap-reverse > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+
+}
+#flex-container-row-wrap{
+    display: flex;
+  flex-wrap: row wrap;
+}
+#flex-container-row-wrap > div {
+ background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+#flex-container-justify{
+
+    display: flex;
+    justify-content: center;
+}
+
+#flex-container-justify  > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+#flex-container-justify-start{
+display: flex;
+justify-content:flex-start;
+}
+#flex-container-justify-end{
+display: flex;
+justify-content:flex-end;
+}
+#flex-container-space-around{
+display: flex;
+justify-content:space-around;
+}
+#flex-container-space-between{
+display: flex;
+justify-content:space-between;
+}
+#flex-container-space-evenly{
+display: flex;
+justify-content:space-evenly;
+}
+#flex-container-align-item-center{
+    display: flex;
+    height: 400px;
+    align-items: center;
+}
+
+#flex-container-align-item-start{
+    display: flex;
+    height: 400px;
+    align-items:flex-start;
+}
+
+#flex-container-align-item-end{
+    display: flex;
+    height: 400px;
+    align-items:flex-end;
+}
+#flex-container-justify-align{
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-content: center
+}
+#flex-container-order{
+    order:2;
+    height: 200px;
+    color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;  
+}
+#flex-container-grow{
+    flex-grow: 8;
+    height: 200px;
+    color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px; 
+}
+#flex-container-shrink{
+   flex-shrink: 1;
+    height: 200px;
+    color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px; 
+
+}
+#flex-container-basic{
+    flex-basis: 0cm;
+    height: 200px;
+    color: white;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px; 
+
+}
+
+
+
+</style>
 </head>
 <body>
-<h1>CSS HTML FILES</h1>
+
+<h1>The flex Property</h1>
+<!-- flex property -->
+<div id="main">
+  <div style="background-color:coral;">1</div>
+  <div style="background-color:lightblue;">2</div>  
+  <div style="background-color:red;">3</div>
+  <div style="background-color:yellow;">4</div>
+  <div style="background-color:black;">5</div>
+</div>
+
+<!-- flex container column -->
+
+<div id="flex-container-column">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div>
+</div>
+<!-- flex conatiner row -->
+<div id="flex-container-row">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div>
+</div>
+<!-- flex container reverse -->
+<div id="flex-container-reverse">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div>
+</div>
+<!-- flex container nowrap -->
+<div id="flex-container-nowrap">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div>
+    <div>six</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+</div>
+<!-- flex container wrap  -->
+<div id="flex-container-wrap">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div>
+    <div>six</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+</div>
+ <!-- wrap reverse code  -->
+<div id ="flex-container-wrap-reverse">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div>
+    <div>six</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+</div>
+ <!-- row wrap code  -->
+<div id="flex-container-row-wrap">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div>
+    <div>six</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+    <div>seaven</div>
+    <div>eight</div>
+    <div>nine</div>
+    <div>ten</div>
+</div>
+<!-- justify content in center  -->
+<div id="flex-container-justify">
+    <div>first</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>five</div> 
+</div>
+
 </body>
 </html>
